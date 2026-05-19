@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Torrent</id>
+    <version>1.0.0</version>
+    <authors>Torrent</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="MonoTorrent" version="3.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/home/linuxguy/Desktop/Torrent/bin/Release/net8.0/Torrent.runtimeconfig.json" target="lib/net8.0/Torrent.runtimeconfig.json" />
+    <file src="/home/linuxguy/Desktop/Torrent/bin/Release/net8.0/Torrent.dll" target="lib/net8.0/Torrent.dll" />
+  </files>
+</package>

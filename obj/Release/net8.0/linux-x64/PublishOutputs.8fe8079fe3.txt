@@ -1,0 +1,2 @@
+/home/linuxguy/Desktop/Torrent/bin/Release/net8.0/linux-x64/publish/Torrent.pdb
+/home/linuxguy/Desktop/Torrent/bin/Release/net8.0/linux-x64/publish/Torrent
