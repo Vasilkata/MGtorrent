@@ -42,20 +42,22 @@ class Program
     // Start the download
     await manager.StartAsync();
 
+    // Print the name of the torrent in blue
     Console.ForegroundColor = (ConsoleColor)(14);
     Console.Write($"Downloading: ");
     Console.ForegroundColor = (ConsoleColor)(9);
     Console.WriteLine($"{torrent.Name}");
 
+    // Set the color of the loading bar to green
     Console.ForegroundColor = (ConsoleColor)(2);
 
-    // Show progress bar and percent
+    // Show progress bar and percentage
     int progressBlocks;
     while(manager.State != TorrentState.Stopped)
     {
       progressBlocks = Convert.ToInt32(manager.Progress / 5);
       Console.Write($"Progress: {manager.Progress:0.00}% ");
-      Console.Write($"[{new string('█', progressBlocks) + new string('░', 20 - progressBlocks)}]\r");
+      Console.Write($"[{ new string('█', progressBlocks) + new string('░', 20 - progressBlocks) }]\r");
 
       if(manager.Progress >= 100.0 && manager.State == TorrentState.Seeding)
       {
@@ -66,11 +68,15 @@ class Program
       await Task.Delay(1000);
     }
 
+    // Reset the color back to white
+    Console.ForegroundColor = (ConsoleColor)(0);
     await engine.StopAllAsync();
   }
 
   public static string DownloadsFolder
-  {get {
+  {
+    get
+    {
       // Try the standard User Profile path
       string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
 
